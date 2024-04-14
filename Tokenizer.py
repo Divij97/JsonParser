@@ -72,7 +72,7 @@ def __parse_boolean(input: str, pos: int):
     raise Exception(f"Found unexpected character at pos: {pos}")
 
 def __parse_number(input: str, pos: int):
-    num = 0
+    num, decimal, exponent = 0, 0, 0
     num_digits = 0
     sign = 1
 
@@ -81,7 +81,8 @@ def __parse_number(input: str, pos: int):
         pos += 1
         num_digits += 1
 
-    decimal = 0
+    
+    
     while (pos < len(input) and str.isdigit(input[pos])):
         num = num * 10 + int(input[pos])
         num_digits += 1

@@ -20,7 +20,7 @@ def main():
     try:
         with open(filename, 'r') as file:
             data = file.read()
-            parsed_data = parser.parse(data)
+            parsed_data = parser.parse_json(data)
             print(parsed_data)
     except Exception as e:
         print(f"Error parsing JSON: {str(e)}")
